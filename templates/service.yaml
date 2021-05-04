@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: chiaretto-app
+    app.kubernetes.io/component: chiaretto-app
+    app.kubernetes.io/instance: chiaretto-app
+  name: chiaretto-app
+  namespace: chiaretto
+spec:
+  ports:
+  - name: 8081-tcp
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    deploymentconfig: chiaretto-app
+  sessionAffinity: None
+  type: ClusterIP

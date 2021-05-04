@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  APP_VERSION: "{{ .Values.configmap }}"
+kind: ConfigMap
+metadata:
+  name: chiaretto-app-version
+  namespace: chiaretto
