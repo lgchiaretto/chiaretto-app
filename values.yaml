@@ -1,3 +1,2 @@
-secret: mySecret
 configmap: 1.3
 route: chiaretto.apps.ocp4kvm.chiaret.to
