@@ -6,7 +6,6 @@ metadata:
     app.kubernetes.io/component: chiaretto-app
     app.kubernetes.io/instance: chiaretto-app
   name: chiaretto-app
-  namespace: chiaretto
 spec:
   ports:
   - name: 8081-tcp
