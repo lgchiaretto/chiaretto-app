@@ -33,6 +33,11 @@ spec:
             configMapKeyRef:
               key: APP_VERSION
               name: chiaretto-app-version
+        - name: APP_ENV
+          valueFrom:
+            configMapKeyRef:
+              key: APP_ENV
+              name: chiaretto-app-environment
         - name: APP_SECRET
           valueFrom:
             secretKeyRef:

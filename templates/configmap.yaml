@@ -4,3 +4,11 @@ data:
 kind: ConfigMap
 metadata:
   name: chiaretto-app-version
+---
+apiVersion: v1
+data:
+  APP_ENV: "{{ .Values.env }}"
+kind: ConfigMap
+metadata:
+  name: chiaretto-app-environment
+
