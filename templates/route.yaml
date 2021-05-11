@@ -2,12 +2,12 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   labels:
-    app: chiaretto-app
-    app.kubernetes.io/component: chiaretto-app
-    app.kubernetes.io/instance: chiaretto-app
+    app: {{ Values.release.name }}
+    app.kubernetes.io/component: {{ Values.release.name }}
+    app.kubernetes.io/instance: {{ Values.release.name }}
   name: chiaretto-https
 spec:
-  host: "{{ .Values.route }}"
+  host: "{{ .Values.chiaretto.route }}"
   port:
     targetPort: 8081-tcp
   tls:
@@ -15,6 +15,6 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: chiaretto-app
+    name: {{ Values.release.name }}
     weight: 100
   wildcardPolicy: None
