@@ -1,5 +1,5 @@
 apiVersion: v2
-name: {{ Values.release.name }}
+name: "chiaretto-app"
 description:
 type: application
 version: 0.1.0
