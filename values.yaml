@@ -1,4 +1,4 @@
 chiaretto:
   version: '1.0'
-  route: chiaretto.apps.ocp4a.chiaret.to
+  route: apps.ocp4a.chiaret.to
   env: default
