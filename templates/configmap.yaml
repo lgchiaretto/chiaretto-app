@@ -3,12 +3,12 @@ data:
   APP_VERSION: "{{ .Values.chiaretto.version }}"
 kind: ConfigMap
 metadata:
-  name: {{ Values.release.name }}-version
+  name: {{ .Release.name }}-version
 ---
 apiVersion: v1
 data:
   APP_ENV: "{{ .Values.env }}"
 kind: ConfigMap
 metadata:
-  name: {{ Values.release.name }}-environment
+  name: {{ .Release.name }}-environment
 

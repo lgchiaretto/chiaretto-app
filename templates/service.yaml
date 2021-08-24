@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: {{ Values.release.name }}
-    app.kubernetes.io/component: {{ Values.release.name }}
-    app.kubernetes.io/instance: {{ Values.release.name }}
-  name: {{ Values.release.name }}
+    app: {{ .Release.name }}
+    app.kubernetes.io/component: {{ .Release.name }}
+    app.kubernetes.io/instance: {{ .Release.name }}
+  name: {{ .Release.name }}
 spec:
   ports:
   - name: 8081-tcp
@@ -13,6 +13,6 @@ spec:
     protocol: TCP
     targetPort: 8081
   selector:
-    deploymentconfig: {{ Values.release.name }}
+    deploymentconfig: {{ .Release.name }}
   sessionAffinity: None
   type: ClusterIP
