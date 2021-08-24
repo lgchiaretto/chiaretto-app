@@ -2,15 +2,15 @@ apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   labels:
-    app: {{ .Release.name }}
-    app.kubernetes.io/component: {{ .Release.name }}
-    app.kubernetes.io/instance: {{ .Release.name }}
-  name: {{ .Release.name }}
+    app: {{ .Release.Name }}
+    app.kubernetes.io/component: {{ .Release.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  name: {{ .Release.Name }}
 spec:
   replicas: 1
   revisionHistoryLimit: 10
   selector:
-    deploymentconfig: {{ .Release.name }}
+    deploymentconfig: {{ .Release.Name }}
   strategy:
     activeDeadlineSeconds: 21600
     resources: {}
@@ -24,7 +24,7 @@ spec:
   template:
     metadata:
       labels:
-        deploymentconfig: {{ .Release.name }}
+        deploymentconfig: {{ .Release.Name }}
     spec:
       containers:
       - env:
@@ -32,20 +32,20 @@ spec:
           valueFrom:
             configMapKeyRef:
               key: APP_VERSION
-              name: {{ .Release.name }}-version
+              name: {{ .Release.Name }}-version
         - name: APP_ENV
           valueFrom:
             configMapKeyRef:
               key: APP_ENV
-              name: {{ .Release.name }}-environment
+              name: {{ .Release.Name }}-environment
         - name: APP_SECRET
           valueFrom:
             secretKeyRef:
               key: APP_SECRET
-              name: {{ .Release.name }}-secret
+              name: {{ .Release.Name }}-secret
         image: "quay.io/chiaretto/chiaretto-app:{{ .Values.chiaretto.version }}"
         imagePullPolicy: Always
-        name: {{ .Release.name }}
+        name: {{ .Release.Name }}
         ports:
         - containerPort: 8081
           protocol: TCP
