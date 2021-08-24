@@ -42,7 +42,7 @@ spec:
           valueFrom:
             secretKeyRef:
               key: APP_SECRET
-              name: {{ .Release.Name }}-secret
+              name: app-secret
         image: "quay.io/chiaretto/chiaretto-app:{{ .Values.chiaretto.version }}"
         imagePullPolicy: Always
         name: {{ .Release.Name }}
