@@ -1,4 +1,4 @@
 chiaretto:
   version: '1.0'
-  route: apps.hub.chiaret.to
+  route: apps.orizon.chiaret.to
   env: default
