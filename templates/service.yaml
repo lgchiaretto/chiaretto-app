@@ -13,6 +13,6 @@ spec:
     protocol: TCP
     targetPort: 8081
   selector:
-    deploymentconfig: {{ .Release.Name }}
+    app: {{ .Release.Name }}
   sessionAffinity: None
   type: ClusterIP
